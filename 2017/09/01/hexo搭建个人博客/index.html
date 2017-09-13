@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/image/favicon.jpg">
+
+    
+
+    <title>
+        
+        hexo搭建个人博客 |
+        
+        dongxue
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Plugin CSS -->
+
+
+    <!-- Custom CSS -->
+    <!-- ↓这是stylus文件 -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/toc.css">
+    <link rel="stylesheet" href="/css/rocket.css">
+
+
+
+</head>
+<body></body>
+
+
+<body>
+
+<!-- Header -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header {
+     background-image: url('/image/header.jpg');
+        /*post*/
+    
+    }
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- 文章 -->
+                
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#hexo"
+                           title="hexo">hexo</a>
+                        
+                    </div>
+                    <h1>hexo搭建个人博客</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                            Posted by 小胖子 on
+                        2017-09-01
+                        </span>
+                </div>
+                <!-- 非文章 -->
+                
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Nav -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">dongxue</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/portfolio">Portfolio</a></li>
+                    
+                    <li><a href="/about">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Content -->
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post container -->
+
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <h1 id="hexo-github搭建个人博客"><a href="#hexo-github搭建个人博客" class="headerlink" title="hexo+github搭建个人博客"></a>hexo+github搭建个人博客</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。由于github pages存放的都是静态文件，博客存放的不只是文章内容，还有文章列表、分类、标签、翻页等动态内容，假如每次写完一篇文章都要手动更新博文目录和相关链接信息，相信谁都会疯掉，<strong>所以hexo所做的就是将这些md文件都放在本地</strong>，每次写完文章后调用写好的命令来批量完成相关页面的生成，然后再将有改动的页面提交到github。</p>
+<a id="more"></a>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li><p>安装node.js</p>
+<p>下载对应版本的node.js安装，并配置环境变量path</p>
+</li>
+<li><p>安装git</p>
+</li>
+<li><p>安装hexo</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config set registry https://registry.npm.taobao.org</div><div class="line">sudo npm install --unsafe-perm --verbose -g hexo</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<h2 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a>初始化hexo</h2><ul>
+<li><p>创建一个博客存放目录 /blogs，在该目录下进行hexo初始化</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> hexo init /blogs</div><div class="line"><span class="meta">$</span> cd /blogs</div><div class="line"><span class="meta">$</span> npm install</div></pre></td></tr></table></figure>
+<p>完成后/blogs目录下生成以下文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">·</div><div class="line">|-- _config.yml</div><div class="line">|-- package.json</div><div class="line">|-- scaffolds</div><div class="line">|-- source</div><div class="line">|   |-- _drafts</div><div class="line">|   |-- _posts</div><div class="line">|-- themes</div><div class="line"></div><div class="line">_config.yml站点配置文件，很多全局配置都在这个文件中。</div><div class="line">package.json 应用数据。从它可以看出hexo版本信息，以及它所默认或者说依赖的一些组件。</div><div class="line">scaffolds 模版文件。当你创建一篇新的文章时，hexo会依据模版文件进行创建，主要用在你想在每篇文章都添加一些共性的内容的情况下。</div><div class="line">scripts 放脚本的文件夹， 就是放js文件的地方</div><div class="line">source 这个文件夹就是放文章的地方了，除了文章还有一些主要的资源，比如文章里的图片，文件等等东西。这个文件夹最好定期做一个备份，丢了它，整个站点就废了。</div><div class="line">themes 主题文件夹。</div></pre></td></tr></table></figure>
+</li>
+<li><p>初始化hexo完成后，安装 hexo server</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> sudo npm install hexo-server </div><div class="line"><span class="meta">$</span> npm install hexo-generator-index --save #索引生成器</div><div class="line"><span class="meta">$</span> npm install hexo-generator-archive --save #归档生成器</div><div class="line"><span class="meta">$</span> npm install hexo-generator-category --save #分类生成器</div><div class="line"><span class="meta">$</span> npm install hexo-generator-tag --save #标签生成器</div><div class="line"><span class="meta">$</span> npm install hexo-deployer-git --save #hexo通过git发布（必装）</div><div class="line"><span class="meta">$</span> npm install hexo-renderer-marked@0.2.7--save #渲染器</div><div class="line"><span class="meta">$</span> npm install hexo-renderer-stylus@0.3.0 --save #渲染器</div></pre></td></tr></table></figure>
+</li>
+<li><p>生成静态页面并打开hexo本地服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> hexo generate #生成静态页面  (或 hexo g)</div><div class="line"><span class="meta">$</span> hexo server  # 启动本地hexo</div></pre></td></tr></table></figure>
+<p>启动完成后打开<a href="http://localhost:4000查看效果" target="_blank" rel="external">http://localhost:4000查看效果</a></p>
+</li>
+</ul>
+<h2 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h2><ul>
+<li><p>执行命令创建博客</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> hexo new 'hexo搭建个人博客'</div></pre></td></tr></table></figure>
+<p>此时hexo会在source下的_posts目录下创建一个名为hexo搭建个人博客的md文件，会自动生成博客标题和时间，同时可以手动去该目录下创建博客</p>
+</li>
+<li><p>使用&lt;!—more—&gt; 控制哪部分作为简介</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: hexo搭建个人博客</div><div class="line">date: 2017-09-01 00:17:40</div><div class="line">categories: 默认分类 #分类</div><div class="line">tags: hexo</div><div class="line">description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</div></pre></td></tr></table></figure>
+<p>hexo+github搭建个人博客</p>
+<p>简介</p>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。由于github pages存放的都是静态文件，博客存放的不只是文章内容，还有文章列表、分类、标签、翻页等动态内容，假如每次写完一篇文章都要手动更新博文目录和相关链接信息，相信谁都会疯掉，所以hexo所做的就是将这些md文件都放在本地，每次写完文章后调用写好的命令来批量完成相关页面的生成，然后再将有改动的页面提交到github。</p>
+<!--more-->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 关联github</div><div class="line"></div><div class="line">- 在github上创建以用户名.github.io的仓库，aspiresnow.github.io</div><div class="line"></div><div class="line">- 配置ssh key</div><div class="line"></div><div class="line">  ```shell</div><div class="line">  $ cd ~/. ssh #检查本机已存在的ssh密钥</div><div class="line">  $ ssh-keygen -t rsa -C &quot;714131254@qq.com&quot;</div></pre></td></tr></table></figure>
+<p>连续点回车然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到<code>.ssh\id_rsa.pub</code>文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：</p>
+</li>
+<li><p>测试ssh配置是否成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> ssh -T git@github.com</div></pre></td></tr></table></figure>
+<p>如果提示<code>Are you sure you want to continue connecting (yes/no)?</code>，输入yes，然后会看到</p>
+<blockquote>
+<p>Hi liuxianan! You’ve successfully authenticated, but GitHub does not provide shell access. </p>
+</blockquote>
+<p>说明配置成功，此时添加git配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span> $ git config --global user.name "liuxianan"// 你的github用户名，非昵称</div><div class="line"><span class="meta">&gt;</span> $ git config --global user.email  "xxx@qq.com"// 填写你的github注册邮箱</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改/blogs目录下的 <strong>_config.yml </strong>文件，在修改最下方的<strong>deploy</strong>为：(注意:后面要有空格)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:aspiresnow/aspiresnow.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装hexo的git部署</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>将生成静态页面并部署到github的仓库中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> hexo clean</div><div class="line"><span class="meta">$</span> hexo d -g </div><div class="line">或者</div><div class="line"><span class="meta">$</span> hexo generate</div><div class="line"><span class="meta">$</span> hexo deploy</div></pre></td></tr></table></figure>
+<p>访问<a href="https://aspiresnow.github.io/验证效果" target="_blank" rel="external">https://aspiresnow.github.io/验证效果</a></p>
+</li>
+</ul>
+<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><ul>
+<li><p>首先将主题库clone到/blogs目录下的themes目录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> cd /blogs/themes/</div><div class="line"><span class="meta">$</span> git clone https://github.com/hilanmiao/hexo-theme-lanmiao</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装主题</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> cd hexo-theme-lanmiao</div><div class="line"><span class="meta">$</span> npm install</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改hexo的主题配置配置文件<code>_config.yml</code>中的主题标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># Site</div><div class="line">favicon: /image/favicon.jpg</div><div class="line">header-img: /image/header-img.png</div><div class="line"></div><div class="line"># Writing</div><div class="line">post_asset_folder: true</div><div class="line"></div><div class="line"># Extensions</div><div class="line">theme: hexo-theme-lanmiao#对应主题的文件夹名称</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo clean #清空</div><div class="line">hexo d -g  #重新部署</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>主题地址：<a href="https://github.com/hilanmiao/hexo-theme-lanmiao" target="_blank" rel="external">LanMiao</a></li>
+</ul>
+
+
+
+            <!-- Pager -->
+            <ul class="pager">
+                
+                <li class="previous">
+                    <a href="/2017/09/02/java线程池/" >&larr; Previous Post</a>
+                </li>
+                
+                
+            </ul>
+
+
+
+        </div>
+        <!-- Sidebar container-->
+        <div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+            <!-- toc -->
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+                <h4><i class="fa fa-bookmark"></i> Catalog</h4>
+                <ul class="nav bs-docs-sidenav">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; dongxue 2017
+                    <br>
+                    Theme by <a href="http://beantech.org/">Bean Tech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://yoursite.com">dongxue</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/script.js"></script>
+
+
+
+
+<a id="rocket" href="#top" class=""></a>
+<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+
+</body>
+</html>
